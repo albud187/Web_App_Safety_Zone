@@ -15,12 +15,35 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+admin_codes_dir = os.path.join(BASE_DIR,'admin_codes.txt')
+
+codes = open(admin_codes_dir,'r')
+codes_content = codes.read()
+codes_content_list = codes_content.split('\n')
+codes_content_dict = {}
+for item in codes_content_list:
+    try:
+        KEY = item.split(':')[0]
+        VALUE = item.split(':')[1]
+        codes_content_dict[KEY]=VALUE
+    except:
+        pass
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1$dbjq!56tzkeyig6&bmnu_^!cb@h9^2lt^a5%^#$+i504n3j@'
+SECRET_KEY = codes_content_dict['SECRET_KEY']
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +60,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    'rest_framework',
+    'corsheaders',
+    'rest_auth',
+    'rest_auth.registration',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
