@@ -15,7 +15,6 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 admin_codes_dir = os.path.join(BASE_DIR,'admin_codes.txt')
 
 codes = open(admin_codes_dir,'r')
@@ -30,6 +29,12 @@ for item in codes_content_list:
     except:
         pass
 
+CONTAINER_DIR = BASE_DIR.parent
+TEMPLATES_DIR = os.path.join(CONTAINER_DIR, 'project_safety_zone_templates')
+print('XXX')
+print('mydir is')
+print(TEMPLATES_DIR)
+print('XXX')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -67,11 +72,18 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
+    'crispy_forms',
+    'bootstrap4',
+
     'rest_framework',
     'corsheaders',
     'rest_auth',
     'rest_auth.registration',
     'rest_framework.authtoken',
+
+    'app_api',
+    'app_records',
+    'app_reports'
 ]
 
 MIDDLEWARE = [
@@ -89,7 +101,7 @@ ROOT_URLCONF = 'project_safety_zone.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
