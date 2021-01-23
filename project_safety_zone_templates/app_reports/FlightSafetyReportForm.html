@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron 8">
+    <h1> Report Flight Safety Incident Here </h1>
+    <br>
+<form>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Contact Email</label>
+        <input type="text" name="contact email" >
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Contact Number</label>
+        <input type="text" name="contact number">
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Date/Time</label>
+        <input type="text" name="date_time">
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Location</label>
+        <input type="text" name="location">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea class="form-control" name="description" rows="10"></textarea>
+    </div>
+
+    <div class="form-group">
+   <label for="exampleFormControlFile1">Example file input</label>
+   <input type="file" class="form-control-file" name="description">
+ </div>
+
+  <input class="btn btn-primary" type="submit" value= "submit">
+
+</form>
+
+  </div>
+</div>
+
+{% load static %}
+{% endblock %}
+
+<script src="FlightSafetyReportForm.js">
