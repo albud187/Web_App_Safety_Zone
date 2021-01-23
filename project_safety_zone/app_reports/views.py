@@ -13,3 +13,25 @@ from django.views.generic import TemplateView
 
 class FlightSafetyReportView(TemplateView):
     template_name = 'app_reports/FlightSafetyReportForm.html'
+
+def send_results(function_name,request,output_path):
+
+    ## send email
+    email_subject = 'flight safety report placeholder'
+    email_text = 'please find enclosed results of '
+    sender = ''
+    recipient = [request.POST['user_recipient']]
+    bcc =[]
+    reply_to=[]
+    headers={}
+    email = EmailMessage(
+        email_subject,
+        email_text,
+        sender,
+        recipient,
+        bcc,
+        reply_to,
+        headers
+    )
+    email.attach_file(output_path)
+    email.send()
