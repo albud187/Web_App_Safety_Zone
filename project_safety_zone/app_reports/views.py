@@ -18,8 +18,25 @@ class FlightSafetyReportConfirmView(TemplateView):
     template_name = 'app_reports/FlightSafetyReportConfirm.html'
 
 def test(request):
+
+    contact_email = request.GET['contact_email']
+    contact_number= request.GET['contact_number']
+    date_time = request.GET['date_time']
+    description = request.GET['description']
+    location = request.GET['location']
+    print('testing')
+    print(contact_email)
+    print(contact_number)
+    print(date_time)
+    print(description)
+    print(location)
     print('test complete')
     return render(request, 'app_reports/FlightSafetyReportConfirm.html')
+
+def post_and_send(request):
+    #saves data onto django database
+    #sends email
+    pass
 
 def send_results(function_name,request,output_path):
 
