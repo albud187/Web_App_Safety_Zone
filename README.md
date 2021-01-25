@@ -9,13 +9,13 @@
 * [Description](#description)
 * [Technologies Used](#technologies-used)
 * [User Story](#user-story)
+* [Installation](#installation)
 * [Usage](#usage)
-* [License](#licence)
-* [Contributing](#contributing)
+
 
 ## Description
 
-This is a web application that allows users to view, create and track daily workouts. It is fully responsive and uses MongoDB in the back-end.
+placeholder
 
 ## Technologies Used
 
@@ -35,4 +35,4 @@ placeholder
 
 ## Usage
 
-![Step 1]
+placeholder
