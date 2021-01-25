@@ -22,3 +22,12 @@ FlightSafetyReportSerializer
 class FlightSafetyReportViewSet(viewsets.ModelViewSet):
     serializer_class = FlightSafetyReportSerializer
     queryset = FlightSafetyReport.objects.all()
+
+    def create(self, request, *args, **kwargs):
+        response = super(FlightSafetyReportViewSet, self).create(request, *args, **kwargs)
+        print('test')
+        print(response.data)
+        print('test complete')
+        # tweak function to send email on submit
+        # tweak function send image too
+        return(response)
