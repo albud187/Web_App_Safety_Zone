@@ -7,43 +7,45 @@
     <h1> Report Flight Safety Incident Here </h1>
     <br>
 
+    <div id="container">
+
+      <form action="" id="form" onsubmit="post_report(event)" method="post">{% csrf_token %}
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Contact Email</label>
+            <input type="text" id="contact_email" >
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Contact Number</label>
+            <input type="text" id="contact_number">
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Date/Time</label>
+            <input type="text" id="date_time">
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Location</label>
+            <input type="text" id="location">
+        </div>
+
+        <div class="form-group row" name="description">
+          <label class="col-sm-2 col-form-label" name="description">Description</label>
+          <textarea id="description" rows="10"></textarea>
+        </div>
 
 
-<form action ="test">
+     <div class="form-group">
+    <label for="file">Example file input</label>
+    <input type="file" class="form-control-file" name="description">
+  </div>
 
-    <div class="form-group row">
-      <label class="col-sm-2 col-form-label">Contact Email</label>
-        <input type="text" name="contact_email" >
+
+        <button type="submit">Submit</button>
+      </form>
     </div>
-
-    <div class="form-group row">
-      <label class="col-sm-2 col-form-label">Contact Number</label>
-        <input type="text" name="contact_number">
-    </div>
-
-    <div class="form-group row">
-      <label class="col-sm-2 col-form-label">Date/Time</label>
-        <input type="text" name="date_time">
-    </div>
-
-    <div class="form-group row">
-      <label class="col-sm-2 col-form-label">Location</label>
-        <input type="text" name="location">
-    </div>
-
-    <div class="form-group row" name="description">
-      <label class="col-sm-2 col-form-label" name="description">Description</label>
-      <textarea name="description" rows="10"></textarea>
-    </div>
-
-    <div class="form-group">
-   <label for="file">Example file input</label>
-   <input type="file" class="form-control-file" name="description">
- </div>
-
-  <input class="btn btn-primary" type="submit" value= "submit">
-
-</form>
 
 
   </div>
@@ -52,6 +54,56 @@
 
 <script>
   console.log('js linked')
+
+  function getCookie(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+              const cookie = cookies[i].trim();
+              // Does this cookie string begin with the name we want?
+              if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                  break;
+              }
+          }
+      }
+      return cookieValue;
+  }
+  const csrftoken = getCookie('csrftoken');
+
+console.log(csrftoken)
+  function post_report(event) {
+    event.preventDefault();
+    var contact_email = document.getElementById("contact_email").value
+    var contact_number = document.getElementById("contact_number").value
+    var date_time = document.getElementById("date_time").value
+    var location = document.getElementById("location").value
+    var description = document.getElementById("description").value
+    console.log(contact_email)
+    console.log(contact_number)
+    console.log(date_time)
+    console.log(location)
+    console.log(description)
+
+    fetch("http://127.0.0.1:8000/api/Flight_Safety_Reports/",{
+      method: "POST",
+      mode: 'same-origin',
+      headers:{
+        'Content-Type':'application/json',
+        'X-CSRFToken': csrftoken
+      },
+      body: JSON.stringify({
+        contact_email:contact_email,
+        contact_number:contact_number,
+        date_time:date_time,
+        location:location,
+        description:description
+
+      })
+    })
+
+  }
 
 </script>
 {% endblock %}

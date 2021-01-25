@@ -50,6 +50,7 @@ def send_notification(response):
 
 
 class FlightSafetyReportViewSet(viewsets.ModelViewSet):
+    
     serializer_class = FlightSafetyReportSerializer
     queryset = FlightSafetyReport.objects.all()
 

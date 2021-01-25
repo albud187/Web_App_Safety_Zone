@@ -94,6 +94,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'project_safety_zone.urls'
@@ -176,6 +177,12 @@ REST_FRAMEWORK = {
    'rest_framework.permissions.AllowAny',
 ]
 }
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.SessionAuthentication'
+#     ]
+# }
 
 CORS_ORIGIN_ALLOW_ALL = True
 
