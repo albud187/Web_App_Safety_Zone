@@ -167,3 +167,22 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #need to use static files to link plain js
+
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+'DEFAULT_PERMISSION_CLASSES': [
+   'rest_framework.permissions.AllowAny',
+]
+}
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CSRF_COOKIE_NAME = "XSRF-TOKEN"
+
+EMAIL_HOST=codes_content_dict['EMAIL_HOST']
+EMAIL_HOST_USER=codes_content_dict['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD=codes_content_dict['EMAIL_HOST_PASSWORD']
+EMAIL_USE_TLS=True
+EMAIL_PORT=587

@@ -1,9 +1,5 @@
 # Safety Zone
 
-![GitHub repo size](https://img.shields.io/github/repo-size/albud187/Web_App_Safety_Zone)
-![GitHub top language](https://img.shields.io/github/languages/top/albud187/Web_App_Safety_Zone)
-![GitHub last commit](https://img.shields.io/github/last-commit/albud187/Web_App_Safety_Zone)
-
 ## Table of Contents
 
 * [Description](#description)
@@ -15,7 +11,7 @@
 
 ## Description
 
-placeholder
+This application allows users to create and view flight safety notifications. 
 
 ## Technologies Used
 

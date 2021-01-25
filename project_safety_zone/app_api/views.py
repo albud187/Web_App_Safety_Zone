@@ -19,6 +19,36 @@ from .serializers import (
 FlightSafetyReportSerializer
 )
 
+def send_notification(response):
+    contact_email = response.data['contact_email']
+    contact_number = response.data['contact_number']
+    date_time = response.data['date_time']
+    description = response.data['description']
+    location = response.data['location']
+    notification_number = response.data['id']
+
+    recipient_email='alfa.budiman@outlook.com'
+    email_subject = 'FLIGHT SAFETY NOTIFICATION # ' +str(notification_number)
+
+    html_message = render_to_string('app_reports/FlightSafetyNotification.html',
+    {'date_time':date_time,
+    'location':location,
+    'description': description
+    })
+    plain_message = strip_tags(html_message)
+
+    email_message = EmailMessage(
+    email_subject,
+    html_message,
+    settings.EMAIL_HOST_USER,
+    [recipient_email]
+    )
+    email_message.content_subtype ='html'
+    email_message.send()
+    print(email_subject)
+
+
+
 class FlightSafetyReportViewSet(viewsets.ModelViewSet):
     serializer_class = FlightSafetyReportSerializer
     queryset = FlightSafetyReport.objects.all()
@@ -30,4 +60,12 @@ class FlightSafetyReportViewSet(viewsets.ModelViewSet):
         print('test complete')
         # tweak function to send email on submit
         # tweak function send image too
+        send_notification(response)
+        return(response)
+
+    def update(self, request, *args, **kwargs):
+        response = super(FlightSafetyReportViewSet, self).create(request, *args, **kwargs)
+        print(response.data['contact_number'])
+        print(response.data['description'])
+        send_notification(response)
         return(response)
