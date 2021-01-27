@@ -33,7 +33,9 @@ def send_notification(response):
     html_message = render_to_string('app_reports/FlightSafetyNotification.html',
     {'date_time':date_time,
     'location':location,
-    'description': description
+    'description': description,
+    'contact_email':contact_email,
+    'contact_number':contact_number
     })
     plain_message = strip_tags(html_message)
 
@@ -50,7 +52,7 @@ def send_notification(response):
 
 
 class FlightSafetyReportViewSet(viewsets.ModelViewSet):
-    
+
     serializer_class = FlightSafetyReportSerializer
     queryset = FlightSafetyReport.objects.all()
 

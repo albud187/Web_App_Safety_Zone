@@ -33,7 +33,7 @@
 
         <div class="form-group row" name="description">
           <label class="col-sm-2 col-form-label" name="description">Description</label>
-          <textarea id="description" rows="10"></textarea>
+          <textarea id="description" rows="6" columns = "10"></textarea>
         </div>
 
 
@@ -105,6 +105,8 @@ console.log(csrftoken)
       })
     })
     .then(response =>console.log(response))
+
+    alert('report submitted')
 
   }
 
