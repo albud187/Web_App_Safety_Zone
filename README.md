@@ -12,7 +12,8 @@
 ## Description
 
 This application allows users to create and view flight safety notifications.
-Flight Safety Notifications generated from this app will then be forwarded to the proper authorities for action.
+The information from these notifcations is automatically emailed to the proper authorities for further action.
+Users can then track the status of that notification.
 
 ## Technologies Used
 
