@@ -49,6 +49,8 @@ def send_notification(response):
     email_message.send()
     print(email_subject)
 
+def upload_file(x):
+    pass
 
 
 class FlightSafetyReportViewSet(viewsets.ModelViewSet):
