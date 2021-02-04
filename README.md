@@ -29,8 +29,28 @@ placeholder
 
 ## Installation
 
-placeholder
+1 - clone the repo
 
+2 - navigate to the project_safety_zone folder on command prompt and install required packages. You may need to use the full path of requirements.txt
+
+```
+pip install -r requirements.txt
+
+```
+
+3 - make migrations
+
+```
+python manage.py makemigrations
+
+```
+
+```
+python manage.py migrate
+
+```
+
+4 - create
 ## Usage
 
 placeholder
