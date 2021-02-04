@@ -4,3 +4,4 @@ django-allauth
 django-bootstrap4
 django-crispy-forms
 django-rest-auth
+django-cors-headers
