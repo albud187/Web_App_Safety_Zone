@@ -23,14 +23,23 @@ After the user submits the report, the application generates an email with the i
 
 ## Installation
 
+
 1 - Clone the repo
 
-2 - Navigate to the project_safety_zone folder on command prompt and install required packages. You may need to use the full path of requirements.txt
+2 - Navigate to the project_safety_zone folder on command prompt and install required packages.  This installation was only done using a virtual Python environment using Anaconda. It is possible that there are other dependancies not covered in requirements.txt, but come pre-loaded when creating a virtual python environment with anacoda. If that is the case and you are not using anacoda, you will have to install these additional dependancies manually
 
 ```
 pip install -r requirements.txt
 
 ```
+
+You may need to use the absolute path of requirements.txt instead of the relative file path. For example, it can look like this
+
+```
+pip install -r C:\Users\UserName\Documents\Web_App_Safety_Zone\project_safety_zone\requirements.txt
+
+```
+
 
 3 - Create your own "admin_codes.txt" file. This should be in the project_safety_zone directory and is in the same directory as "admin_codes_blank.txt". Alternatively, you can rename "admin_codes_blank.txt" to just "admin_codes.txt" and enter your own information there. You will need your own gmail account. You will also need to setup an application password for it.
 Furthermore, you will also need to set which email recieves the notifications. A SECRET_KEY has been provided as placeholder on admin_codes_blank. This is fine for development but for production, it is highly reccomended to make your own. To make your own, you can just make another django project with django-admin startproject GenericProject, to go its settings.py and use that new SECRET_KEY.
