@@ -29,6 +29,7 @@ After the user submits the report, the application generates an email with the i
 2 - Navigate to the project_safety_zone folder on command prompt and install required packages.  This installation was only tested in virtual Python environment using Anaconda. It is possible that there are other dependancies not covered in requirements.txt, but come pre-loaded when creating a virtual python environment with anacoda. If that is the case and you are not using anacoda, you will have to install these additional dependancies manually
 
 ```
+cd project_safety_zone
 pip install -r requirements.txt
 
 ```
@@ -54,7 +55,7 @@ SECRET_KEY:y5u*&jy+&xuxlqu30139=pogcl70-j9s_=lx=n!sl5*umkojv!
 TARGET_EMAIL:reciepient@gmail.com
 ```
 
-A SECRET_KEY has been provided as placeholder on admin_codes_blank. This is fine for development but for production, it is highly reccomended to make your own. To make your own, you can just make another django project with django-admin startproject GenericProject, go its settings.py and use that new SECRET_KEY.
+A SECRET_KEY has been provided as placeholder on admin_codes_blank. This is fine for development but for production, but it is highly reccomended to make your own for production. To make your own, you can just make another django project with django-admin startproject GenericProject, go its settings.py file and use that new SECRET_KEY.
 
 ```
 django-admin startproject GenericProject
@@ -73,6 +74,12 @@ python manage.py migrate
 
 ```
 python manage.py createsuperuser
+```
+
+6 - To start the web app, open command prompt and navigate to project_safety_zone and run python manage.py runserver.
+```
+cd project_safety_zone
+python manage.py runserver
 ```
 
 ## Usage
