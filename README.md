@@ -33,14 +33,15 @@ pip install -r requirements.txt
 ```
 
 3 - Create your own "admin_codes.txt" file. This should be in the project_safety_zone directory and is in the same directory as "admin_codes_blank.txt". Alternatively, you can rename "admin_codes_blank.txt" to just "admin_codes.txt" and enter your own information there. You will need your own gmail account. You will also need to setup an application password for it.
-Furthermore, you will also need to set which email recieves the notifications.
+Furthermore, you will also need to set which email recieves the notifications. A SECRET_KEY has been provided as placeholder on admin_codes_blank. This is fine for development but for production, it is highly reccomended to make your own. To make your own, you can just make another django project with django-admin startproject GenericProject, to go its settings.py and use that new SECRET_KEY.
+
 ```
 EMAIL_HOST:smtp.gmail.com
 EMAIL_HOST_USER:sender@gmail.com
 EMAIL_HOST_PASSWORD:yourAppPassword
 EMAIL_USE_TLS:True
 EMAIL_PORT:587
-SECRET_KEY:yourSecretKey
+SECRET_KEY:y5u*&jy+&xuxlqu30139=pogcl70-j9s_=lx=n!sl5*umkojv!
 TARGET_EMAIL:reciepient@gmail.com
 ```
 4 - Make migrations
