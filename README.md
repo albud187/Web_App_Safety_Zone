@@ -4,7 +4,6 @@
 
 * [Description](#description)
 * [Technologies Used](#technologies-used)
-* [User Story](#user-story)
 * [Installation](#installation)
 * [Usage](#usage)
 
@@ -47,16 +46,20 @@ TARGET_EMAIL:reciepient@gmail.com
 
 ```
 python manage.py makemigrations
-
-```
-
-```
 python manage.py migrate
-
 ```
+
 
 5 - create super user
 
+```
+python manage.py createsuperuser
+```
+
 ## Usage
 
-placeholder
+1 - Fill in the fields on the form and click submit
+
+2 - The web app will send an email, with the sender being the one specified at EMAIL_HOST_USER and recipient being the TARGET_EMAIL in your admin_codes.txt file
+
+3 - to log in as admin you navigate to /rest-auth/login/. If running on your computer it would be http://127.0.0.1:8000/rest-auth/login/.
