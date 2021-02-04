@@ -10,16 +10,17 @@
 
 ## Description
 
-**This app is incomplete**
+**THIS APP IS INCOMPLETE**
 
 This application allows users to create and view flight safety notifications.
 After the user submits the report, the application generates an email with the information and sends it to the proper recipient for further investigation.
 
 ## Technologies Used
 
-* `HTML5`
-* `Javascript`
-* `Python (Django)`
+
+* Python (Django)
+* HTML5 (Bootstrap)
+* Javascript
 
 ## Installation
 
