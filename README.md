@@ -11,8 +11,9 @@
 ## Description
 
 **This app is incomplete**
+
 This application allows users to create and view flight safety notifications.
-After the user submits the report, the application generates an email with the information and sends it to the proper recipient for further investigation
+After the user submits the report, the application generates an email with the information and sends it to the proper recipient for further investigation.
 
 ## Technologies Used
 
