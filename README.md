@@ -23,16 +23,16 @@ After the user submits the report, the application generates an email with the i
 
 ## Installation
 
-1 - clone the repo
+1 - Clone the repo
 
-2 - navigate to the project_safety_zone folder on command prompt and install required packages. You may need to use the full path of requirements.txt
+2 - Navigate to the project_safety_zone folder on command prompt and install required packages. You may need to use the full path of requirements.txt
 
 ```
 pip install -r requirements.txt
 
 ```
 
-3 - create your own "admin_codes.txt" file. This should be in the project_safety_zone directory and is in the same directory as "admin_codes_blank.txt". Alternatively, you can rename "admin_codes_blank.txt" to just "admin_codes.txt" and enter your own information there. You will need your own gmail account. You will also need to setup an application password for it.
+3 - Create your own "admin_codes.txt" file. This should be in the project_safety_zone directory and is in the same directory as "admin_codes_blank.txt". Alternatively, you can rename "admin_codes_blank.txt" to just "admin_codes.txt" and enter your own information there. You will need your own gmail account. You will also need to setup an application password for it.
 Furthermore, you will also need to set which email recieves the notifications.
 ```
 EMAIL_HOST:smtp.gmail.com
@@ -43,7 +43,7 @@ EMAIL_PORT:587
 SECRET_KEY:yourSecretKey
 TARGET_EMAIL:reciepient@gmail.com
 ```
-4 - make migrations
+4 - Make migrations
 
 ```
 python manage.py makemigrations
@@ -51,7 +51,7 @@ python manage.py migrate
 ```
 
 
-5 - create super user
+5 - Create super user
 
 ```
 python manage.py createsuperuser
@@ -63,4 +63,4 @@ python manage.py createsuperuser
 
 2 - The web app will send an email, with the sender being the one specified at EMAIL_HOST_USER and recipient being the TARGET_EMAIL in your admin_codes.txt file
 
-3 - to log in as admin you navigate to /rest-auth/login/. If running on your computer it would be http://127.0.0.1:8000/rest-auth/login/.
+3 - To log in as admin you navigate to /rest-auth/login/. If running on your computer it would be http://127.0.0.1:8000/rest-auth/login/.
