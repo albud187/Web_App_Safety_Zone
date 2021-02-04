@@ -11,21 +11,15 @@
 
 ## Description
 
+**This app is incomplete**
 This application allows users to create and view flight safety notifications.
-The information from these notifcations is automatically emailed to the proper authorities for further action.
-Users can then track the status of that notification.
+After the user submits the report, the application generates an email with the information and sends it to the proper recipient for further investigation
 
 ## Technologies Used
 
 * `HTML5`
 * `Javascript`
 * `Python (Django)`
-
-## User Story
-
-```
-placeholder
-```
 
 ## Installation
 
@@ -38,7 +32,18 @@ pip install -r requirements.txt
 
 ```
 
-3 - make migrations
+3 - create your own "admin_codes.txt" file. This should be in the project_safety_zone directory and is in the same directory as "admin_codes_blank.txt". Alternatively, you can rename "admin_codes_blank.txt" to just "admin_codes.txt" and enter your own information there. You will need your own gmail account. You will also need to setup an application password for it.
+Furthermore, you will also need to set which email recieves the notifications.
+```
+EMAIL_HOST:smtp.gmail.com
+EMAIL_HOST_USER:sender@gmail.com
+EMAIL_HOST_PASSWORD:yourAppPassword
+EMAIL_USE_TLS:True
+EMAIL_PORT:587
+SECRET_KEY:yourSecretKey
+TARGET_EMAIL:reciepient@gmail.com
+```
+4 - make migrations
 
 ```
 python manage.py makemigrations
@@ -50,7 +55,8 @@ python manage.py migrate
 
 ```
 
-4 - create
+5 - create super user
+
 ## Usage
 
 placeholder

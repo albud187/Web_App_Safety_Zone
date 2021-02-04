@@ -1,8 +1,6 @@
 from django.shortcuts import render
-
 # Create your views here.
 from rest_framework import viewsets
-
 from django.core import mail
 from django.utils.html import strip_tags
 from django.conf import settings
@@ -10,6 +8,9 @@ from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+
+from project_safety_zone.settings import codes_content_dict
+
 
 from app_reports.models import (
 FlightSafetyReport
@@ -27,7 +28,7 @@ def send_notification(response):
     location = response.data['location']
     notification_number = response.data['id']
 
-    recipient_email='alfa.budiman@outlook.com'
+    recipient_email=codes_content_dict['TARGET_EMAIL']
     email_subject = 'FLIGHT SAFETY NOTIFICATION # ' +str(notification_number)
 
     html_message = render_to_string('app_reports/FlightSafetyNotification.html',
