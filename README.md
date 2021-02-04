@@ -17,8 +17,7 @@ After the user submits the report, the application generates an email with the i
 
 ## Technologies Used
 
-
-* Python (Django)
+* Python (Django - Rest Framework)
 * HTML5 (Bootstrap)
 * Javascript
 
