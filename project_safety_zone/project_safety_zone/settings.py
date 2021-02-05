@@ -31,10 +31,7 @@ for item in codes_content_list:
 
 CONTAINER_DIR = BASE_DIR.parent
 TEMPLATES_DIR = os.path.join(CONTAINER_DIR, 'project_safety_zone_templates')
-print('XXX')
-print('mydir is')
-print(TEMPLATES_DIR)
-print('XXX')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
